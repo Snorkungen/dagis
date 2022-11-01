@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dagis</title>
+
+    <style>
+        :root {
+            --primary-0: #2de1a5;
+            --primary-1: #44e5af;
+            --primary-2: #5ae8b9;
+            --primary-3: #70ebc2;
+            --primary-4: #87eecc;
+            --secondary-0: #ffb4b4;
+            --secondary-1: #ffcece;
+            --secondary-2: #ffe8e8;
+            --secondary-3: #ffffff;
+            --secondary-4: #ffffff;
+            --foreground-0: #78001e;
+            --foreground-1: #920025;
+            --foreground-2: #ac002b;
+            --foreground-3: #c50032;
+            --foreground-4: #de0038;
+            --background-0: #ffc3a5;
+            --background-1: #ffd4bf;
+            --background-2: #ffe5d8;
+            --background-3: #fff6f2;
+            --background-4: #ffffff;
+            --info: #5affff;
+            --success: #c3ff5a;
+            --danger: #e18778;
+            --warning: #ffd25a;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        header ,footer {
+            background: var(--foreground-0);
+            color: var(--background-0);
+            width: 100%;
+            padding: 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        a {
+            background-color: var(--primary-0);
+            color: var(--foreground-0);
+            border: 2px solid var(--primary-1);
+            padding: 0.3rem;
+            border-radius: 5px;
+            font-weight: 800;
+            font-size: larger;
+            text-decoration: none;
+
+            transition: opacity 200ms linear;
+        }
+
+        a:hover {
+            opacity: 0.4;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+
+            background-color:var(--background-0);
+            color: var(--foreground-0);
+            height: 100vh;
+            align-items: center;
+        }
+        main {
+            flex-grow: 4;
+            
+            max-width: 66ch;
+            padding: 0 6px;
+            margin: 2em 0;
+        }
+
+        main img {
+            width: 100%;
+            background-position: center;
+        
+        }
+
+        p , h1{
+            padding: 1em 0;
+        }
+
+        form {
+            background-color: var(--foreground-0);
+            padding: 1em;
+        }
+
+        form input, form textarea{
+            display: block;
+            width: 100%;
+            margin: 1em 0;
+            color: var(--background-0);
+            font-size: 1.3em;
+        }
+        form label {
+            font-weight: 600;
+            font-size: large;
+            color: var(--primary-0);
+        }
+        form input {
+            background-color: inherit;
+            border: none;
+            border-bottom: 4px solid var(--primary-0);
+            padding: 0.3em;
+        }
+
+        form textarea {
+            background-color: inherit;
+            padding: 1em;
+            border: 4px solid var(--primary-0);
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 0.5em;
+            background-color: var(--secondary-0);
+            color: var(--foreground-0);
+            font-weight: 600;
+            font-size: 1.2em;
+            border: 2px solid var(--secondary-1);
+            cursor: pointer;
+            transition: opacity 250ms linear;
+            border-radius: 5px;
+            display: block;
+            margin: 0 0 0 auto;
+        }
+
+        form button:hover {
+            opacity: 0.4;
+        }
+
+        #donate a {
+            width: min-content;
+            display: block;
+            margin: 0 0 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Dagis</h1>
+        <div id="navigation">
+            <a href="#contact">Kontakta</a>
+            <a href="#donate">Donera</a>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>Wielkommen</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id laborum ipsum rem, magnam voluptatibus,
+                distinctio voluptate ex dolorem explicabo expedita maiores dolor, magni error culpa maxime alias
+                consequatur ad provident inventore perspiciatis veniam ipsa asperiores aliquam? Placeat asperiores vero
+                illo.</p>
+            <img src="https://images.unsplash.com/photo-1617656698728-857894d6343e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80" alt="Bild av ett staket.">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque necessitatibus debitis quibusdam nobis
+                dolor optio placeat, obcaecati minus molestias veritatis, officiis saepe. Deleniti provident qui
+                pariatur.</p>
+        </div>
+        <div id="contact">
+            <h1>Kontakta</h1>
+            <form action="/" method="get" id="contact">
+                <label for="name-input">Namn</label>
+                <input type="text" id="name-input" name="name-input" placeholder="Namn" required>
+                <label for="email-input" name="email-input">E-Post</label>
+                <input type="email" id="email-input" placeholder="E-post" required>
+                <label for="message-input">Meddelande</label>
+                <textarea name="message-input" id="message-input" cols="30" rows="10" placeholder="Skriv hit ett meddelande."></textarea>
+                <button type="submit">Skicka</button>
+            </form>
+        </div>
+        <div id="donate">
+            <h1>Stöd</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et qui molestiae praesentium, nobis perferendis delectus maiores velit harum recusandae, quae sapiente rem quos fuga amet ducimus facilis soluta ipsa hic?</p>
+            <a href="https://ochuko.me" id="donate">Donate</a>
+        </div>
+    </main>
+    <footer>
+        <p>Jonne Oke 2022</p>
+    </footer>
+</body>
+</html>
